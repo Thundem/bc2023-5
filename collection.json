@@ -86,7 +86,17 @@
 			"name": "note_name",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"note\": \"udpate note\"\r\n}   "
+				},
 				"url": {
 					"raw": "{{url}}/notes/note",
 					"host": [
@@ -105,18 +115,14 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
 				"url": {
-					"raw": "{{url}}/notes/note_2",
+					"raw": "{{url}}/notes/note",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"notes",
-						"note_2"
+						"note"
 					]
 				}
 			},
