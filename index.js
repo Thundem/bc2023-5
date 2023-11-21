@@ -130,7 +130,7 @@ app.put("/notes/:note_name", upload.none(), async (req, res) => {
     }
 
     // Оновлення тексту нотатки
-    notes[existingNoteIndex].note = "";
+    notes[existingNoteIndex].note = note;
     saveNotes(notes, (saveError) => {
       if (saveError) {
         console.error("Помилка при збереженні нотаток:", saveError);
